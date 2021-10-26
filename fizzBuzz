@@ -1,0 +1,24 @@
+Sub FizzBuzz()
+
+Worksheets("Sheet1").Activate
+ 
+RowCount = Cells(Rows.Count, "A").End(xlUp).Row
+
+For iter = 1 To RowCount
+    If Cells(iter, 1).Value Mod 3 = 0 And Cells(iter, 1).Value Mod 5 = 0 Then
+        Cells(iter, 2).Value = "FizzBuzz"
+    
+    ElseIf Cells(iter, 1).Value Mod 3 = 0 Then
+        Cells(iter, 2).Value = "Fizz"
+        
+    ElseIf Cells(iter, 1).Value Mod 5 = 0 Then
+        Cells(iter, 2).Value = "Buzz"
+        
+    Else
+        Cells(iter, 2).Value = "None"
+    End If
+
+Next iter
+    
+
+End Sub
